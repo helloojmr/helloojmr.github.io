@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>java学习笔记（七） | htworld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="java学习笔记（七）  第一章 多态 父类型引用指向子类型对象这种机制导致程序存在编译阶段绑定和运行阶段绑定两种不同的形态 extends继承和implements实现，是多态性的前提 实现同一接口的不同类型的对象，可被当作同一类型的对象对待 父类对象和从相同的父类派生出来的多个子类的对象，可被当作同一种类型对待 可向这些不同的类型对象发送同样的消息，由于多态性，这些不同类的对象响应同一消息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（七）">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/index.html">
+<meta property="og:site_name" content="htworld">
+<meta property="og:description" content="java学习笔记（七）  第一章 多态 父类型引用指向子类型对象这种机制导致程序存在编译阶段绑定和运行阶段绑定两种不同的形态 extends继承和implements实现，是多态性的前提 实现同一接口的不同类型的对象，可被当作同一类型的对象对待 父类对象和从相同的父类派生出来的多个子类的对象，可被当作同一种类型对待 可向这些不同的类型对象发送同样的消息，由于多态性，这些不同类的对象响应同一消息">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-01T02:22:13.803Z">
+<meta property="article:modified_time" content="2020-03-02T09:23:44.000Z">
+<meta property="article:author" content="蒋明冉">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">蒋明冉</h5>
+          <a href="mailto:jiangmingran1@163.com" title="jiangmingran1@163.com" class="mail">jiangmingran1@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java学习笔记（七）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">java学习笔记（七）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-01T02:22:13.803Z" itemprop="datePublished" class="page-time">
+  2020-05-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-多态"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 多态</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-多态的概念"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1 多态的概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-多态中成员变量的使用特点"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2 多态中成员变量的使用特点</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-多态中成员方法的访问规则"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3 多态中成员方法的访问规则</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-4-向上（下）转型"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1.4 向上（下）转型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-5-instanceof"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">1.5 instanceof</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-6-笔记本案例"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">1.6 笔记本案例</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-修饰符"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 修饰符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-final"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 final</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-权限修饰符"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 权限修饰符</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-内部类"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 内部类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-成员内部类"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1 成员内部类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-局部内部类"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2 局部内部类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-匿名内部类"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.3 匿名内部类</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-类和接口作为成员变量"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 类和接口作为成员变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1-类作为成员变量类型"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">4.1 类作为成员变量类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2-接口作为成员变量类型"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">4.2 接口作为成员变量类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-3-接口作为方法的参数和返回值"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">4.3 接口作为方法的参数和返回值</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java学习笔记（七）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">java学习笔记（七）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-01 10:22:13" datetime="2020-05-01T02:22:13.803Z"  itemprop="datePublished">2020-05-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<p> java学习笔记（七）</p>
+<hr>
+<h1 id="第一章-多态"><a href="#第一章-多态" class="headerlink" title="第一章 多态"></a>第一章 多态</h1><ul>
+<li><strong>父类型引用指向子类型对象</strong>这种机制导致程序存在<strong>编译阶段绑定</strong>和<strong>运行阶段绑定</strong>两种不同的形态</li>
+<li>extends继承和implements实现，是多态性的前提</li>
+<li>实现同一接口的不同类型的对象，可被当作同一类型的对象对待</li>
+<li>父类对象和从相同的父类派生出来的多个子类的对象，可被当作同一种类型对待</li>
+<li>可向这些不同的类型对象发送同样的消息，由于多态性，这些不同类的对象响应同一消息时的行为可以有所差别<blockquote>
+<p>Shap s=new Circle();</p>
+<p>s.draw();</p>
+<p>//实际调用的是Circle对象的draw()方法</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>绑定：将一个<strong>方法调用表达式</strong>与<strong>方法体的代码</strong>结合起来<ul>
+<li>早绑定：“静态绑定”,在程序运行之前执行绑定</li>
+<li>晚绑定：“动态绑定”或“运行期绑定”,是基于对象的类别，在程序运行时绑定；</li>
+<li>对多态来说，编译时无法知道方法调用表达式所指向的实际对象类型，运行时才能确定，所以多态是<strong>动态绑定</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="1-1-多态的概念"><a href="#1-1-多态的概念" class="headerlink" title="1.1 多态的概念"></a>1.1 多态的概念</h2><p><strong>父类名称 对象名 =new 子类名称();</strong><br><strong>接口名称 对象名 =new 实现类名称();</strong></p>
+<blockquote>
+<p>程序在运行阶段，JVM堆内存中创建的是Zi对象，那么此程序在运行阶段一定是调用zi对象的method()方法，此时发生了程序的动态绑定，运行阶段绑定</p>
+</blockquote>
+<pre><code>public class Fu {
+    public void method() {
+        System.out.println(&quot;父类方法&quot;);
+    }
+
+    public void methodFu() {
+        System.out.println(&quot;父类特有方法&quot;);
+    }
+}
+
+public class Zi extends Fu {
+    @Override
+    public void method() {
+        System.out.println(&quot;子类方法&quot;);
+    }
+
+    public void methodZi() {
+        System.out.println(&quot;子类特有方法&quot;);
+    }
+}
+
+public class Demo01Multi {
+    public static void main(String[] args) {
+        //使用多态的写法
+        //左侧父类的引用指向了右侧子类的对象
+        Fu obj = new Zi();
+        obj.method();//子类方法
+        obj.methodFu();//父类特有方法
+        obj.methodZi();//报错！
+        //编译阶段检查到a2的类型是Fu类型，从Fu.class字节码文件中查找methodZi()方法失败
+    }
+}</code></pre><h2 id="1-2-多态中成员变量的使用特点"><a href="#1-2-多态中成员变量的使用特点" class="headerlink" title="1.2 多态中成员变量的使用特点"></a>1.2 多态中成员变量的使用特点</h2><p>访问成员变量的两种方式：</p>
+<ol>
+<li>直接通过对象名称访问</li>
+<li>间接通过成员方法访问</li>
+</ol>
+<pre><code>public class Fu /*extends Object*/ {
+    int num = 10;
+
+    public void show() {
+        System.out.println(num);
+    }
+}
+
+public class Zi extends Fu {
+    int num = 20;
+    int age = 10;
+
+    public void show() {
+        System.out.println(num);
+    }
+}
+
+public class Demo01MultiField {
+    public static void main(String[] args) {
+        //使用多态的写法，父类引用指向子类对象
+        Fu obj = new Zi();
+        System.out.println(obj.num);//父，10
+        //System.out.println(obj.age);错误写法
+
+        obj.show();
+        //子类没有覆盖重写，10
+        // 子类覆盖重写之后，20
+    }
+}</code></pre><h2 id="1-3-多态中成员方法的访问规则"><a href="#1-3-多态中成员方法的访问规则" class="headerlink" title="1.3 多态中成员方法的访问规则"></a>1.3 多态中成员方法的访问规则</h2><pre><code>public class Fu /*extends Object*/ {
+    public void method(){
+        System.out.println(&quot;父类方法&quot;);
+    }
+    public void methodFu(){
+        System.out.println(&quot;父类特有方法&quot;);
+    }
+}
+
+public class Zi extends Fu {
+    @Override
+    public void method(){
+        System.out.println(&quot;子类方法&quot;);
+    }
+    public void methodZi(){
+        System.out.println(&quot;子类特有方法&quot;);
+    }
+}
+
+public class Demo02MultiMethod {
+    public static void main(String[] args) {
+        Fu obj = new Zi();
+        obj.method();//子类方法
+        obj.methodFu();//父类特有方法
+    }
+}</code></pre><h2 id="1-4-向上（下）转型"><a href="#1-4-向上（下）转型" class="headerlink" title="1.4 向上（下）转型"></a>1.4 向上（下）转型</h2><pre><code>//如果不用多态，只用子类
+
+Teacher one =new Teacher();
+
+one.work()//讲课
+
+Assistant two =new Assistant();
+
+two.work()//辅导
+
+//如果使用多态
+
+Employee one =new Teacher();
+
+one.work();//讲课
+
+Employee two =new Assistant();
+
+two.work();//辅导</code></pre><blockquote>
+<p>好处：无论右边new的时候换成哪个子类对象，等号左边调用方法都不会变化。</p>
+</blockquote>
+<ul>
+<li>对象的向上转型：<strong>父类名称 对象名 =new 子类名称（）</strong></li>
+</ul>
+<p>含义：右侧创建一个子类对象，把它当作父类来看待使用</p>
+<p>类似于：自动类型转换 double num =100;</p>
+<p>注意事项：向上转型一定是安全的，但转型之后无法调用子类特有的内容</p>
+<ul>
+<li>对象的向下转型【还原】：<strong>子类名称 对象名 =(子类名称)父类对象</strong></li>
+</ul>
+<p>含义：将父类对象，【还原】成为本来的子类对象</p>
+<pre><code>Animal animal =new Cat();
+
+Cat cat =(Cat)animal;
+
+Dog dog =(Dog)animal;
+
+//错误写法！java.lang.ClassCastException 类转换异常</code></pre><p>类似于：强制类型转换 </p>
+<p>int num =(int)10.0//可以  </p>
+<p>int num=(int)10.5//不可以，精度损失</p>
+<ul>
+<li>注意事项：</li>
+</ul>
+<ol>
+<li><p>必须保证对象本来创建的时候就是猫，才能向下转型成为猫</p>
+</li>
+<li><p>如果对象创建的时候本来不是猫，现在非要向下转型成为猫，就会报错</p>
+</li>
+</ol>
+<h2 id="1-5-instanceof"><a href="#1-5-instanceof" class="headerlink" title="1.5 instanceof"></a>1.5 instanceof</h2><blockquote>
+<p>如何知道一个父类引用的对象，本来是什么子类？</p>
+</blockquote>
+<p>格式：<strong>对象 instanceof 类型</strong><br>结果为一个Boolean值，判断前面的对象能不能当作后面类型的实例</p>
+<pre><code>public class Demo02Instanceof {
+    public static void main(String[] args) {
+        Animal animal = new Dog();//本来是一只狗
+        animal.eat();//狗吃骨头
+
+        //如果希望调用子类特有方法，需要向下转型
+        //判断一个父类引用animal本来是不是Dog
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            dog.watchHouse();
+        }
+        //判断一下父类引用animal本来是不是Cat
+        if (animal instanceof Cat) {
+            Cat cat = (Cat) animal;
+            cat.catchMouse();//猫吃鱼
+        }
+
+        GiveMeAPet(new Dog());
+
+    }
+
+    public static void GiveMeAPet(Animal animal) {
+        if (animal instanceof Dog) {
+            Dog dog = (Dog) animal;
+            dog.watchHouse();
+        }
+
+        if (animal instanceof Cat) {
+            Cat cat = (Cat) animal;
+            cat.catchMouse();
+        }
+    }
+}</code></pre><p>:</p>
+<h2 id="1-6-笔记本案例"><a href="#1-6-笔记本案例" class="headerlink" title="1.6 笔记本案例"></a>1.6 笔记本案例</h2><pre><code>public interface Usb {
+
+    public abstract void open();//打开设备
+
+    public abstract void close();//关闭设备
+}
+
+public class Mouse implements Usb {
+
+    @Override
+    public void open() {
+        System.out.println(&quot;打开鼠标&quot;);
+    }
+
+    @Override
+    public void close() {
+        System.out.println(&quot;关闭鼠标&quot;);
+
+    }
+    public void click(){
+        System.out.println(&quot;点击鼠标&quot;);
+    }
+}
+
+public class KeyBoard implements Usb {
+
+    @Override
+    public void open() {
+        System.out.println(&quot;打开键盘&quot;);
+    }
+
+    @Override
+    public void close() {
+        System.out.println(&quot;关闭键盘&quot;);
+    }
+
+    public void type(){
+        System.out.println(&quot;键盘输入&quot;);
+    }
+}
+
+public class Computer {
+    public void powerOn() {
+        System.out.println(&quot;笔记本电脑开机&quot;);
+    }
+
+    public void powerOff() {
+        System.out.println(&quot;笔记本电脑关机&quot;);
+    }
+
+    //使用USB设备的方法,使用接口作为方法的参数
+    public void useDevice(Usb usb) {
+        usb.open();//打开设备
+        if (usb instanceof Mouse) {
+            Mouse mouse = (Mouse) usb;
+            mouse.click();
+        } else if (usb instanceof KeyBoard) {
+            KeyBoard keyboard = (KeyBoard) usb;
+            keyboard.type();
+        }
+        usb.close();//关闭设备
+    }
+}
+
+public class DemoMain {
+
+    public static void main(String[] args) {
+        Computer computer = new Computer();
+        computer.powerOn();
+
+        /*Mouse mouse =new Mouse();
+          Usb usb=mouse;*/
+        Usb usbMouse = new Mouse();//多态写法，向上转型
+        computer.useDevice(usbMouse);
+
+        KeyBoard keyboard = new KeyBoard();
+        //方法参数是usb类型，传递进去的是实现类对象
+        computer.useDevice(keyboard);//自动向上转型
+
+        computer.useDevice(new KeyBoard());//匿名对象
+
+        computer.powerOff();
+
+        method(10.0);//double-&gt;double
+        method(20);//int-&gt;double
+        int a = 30;
+        method(a);//int-&gt;double
+    }
+
+    public static void method(double num) {
+        System.out.println(num);
+    }
+
+}</code></pre><h1 id="第二章-修饰符"><a href="#第二章-修饰符" class="headerlink" title="第二章 修饰符"></a>第二章 修饰符</h1><h2 id="2-1-final"><a href="#2-1-final" class="headerlink" title="2.1 final"></a>2.1 final</h2><ul>
+<li>final代表<strong>最终、不可改变的</strong><ul>
+<li>常见的四种用法：</li>
+<li>可以用来修饰一个类</li>
+<li>可以用来修饰一个方法</li>
+<li>可以用来修饰一个局部变量</li>
+<li>可以用来修饰一个成员变量</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>public class Demo01Final {
+    public static void main(String[] args) {
+        int num1 = 10;
+        System.out.println(num1);//10
+        num1 = 20;
+        System.out.println(num1);//20
+
+        //一旦使用final用来修饰局部变量，那么这个变量就不能进行改变
+        final int num2 = 200;
+        final int num3;
+        num3 = 30;//正确写法！保证有唯一一次赋值即可
+
+        //对于基本数据类型来说，不可变代表变量中的数据不可改变
+        //对于引用数据类型来说，不可变代表变量中的地址值不可改变
+        Student stu1 = new Student(&quot;吴梦瑶&quot;);
+        System.out.println(stu1.getName());//吴梦瑶
+        System.out.println(stu1);//10f87f48
+        stu1 = new Student(&quot;梦瑶吴&quot;);
+        System.out.println(stu1.getName());//梦瑶吴
+        System.out.println(stu1);//b4c966a
+        System.out.println(&quot;===============&quot;);
+        final Student stu2 = new Student(&quot;瑶梦吴&quot;);
+        System.out.println(stu2);//2f4d3709
+
+        //错误写法！final的引用类型变量，其中的地址不可改变
+        //stu2=new Student(&quot;YABAYA&quot;);
+        stu2.setName(&quot;HAYAHA&quot;);
+        System.out.println(stu2);//2f4d3709
+        System.out.println(stu2.getName());
+
+    }
+}</code></pre><ul>
+<li>final关键字用来修饰一个类</li>
+</ul>
+<p>:</p>
+<pre><code>public final class 类名称{
+    //...
+}</code></pre><p>含义：当前类不能有任何的子类</p>
+<blockquote>
+<p>注意：一个类如果是final的，那么其中所有的成员方法都无法覆盖重写</p>
+</blockquote>
+<pre><code>public final class MyClass /*extends Object*/ {
+    public void method() {
+        System.out.println(&quot;方法执行！&quot;);
+    }
+}
+
+//不能使用一个final类作为父类
+public class MySubClass /*extends MyClass*/ {
+}</code></pre><ul>
+<li>当final用来修饰一个方法的时候这个方法就是最终方法</li>
+</ul>
+<p>:</p>
+<pre><code>修饰符 final 返回值类型 方法名称（参数列表）{
+    //  ...
+}</code></pre><blockquote>
+<p>注意：对于类以及方法来说 abstract和final关键字相矛盾，不能同时使用</p>
+</blockquote>
+<p>:</p>
+<pre><code>public class Fu {
+    public final void method() {
+        System.out.println(&quot;父类方法执行&quot;);
+    }
+} 
+
+public class Zi extends Fu {
+
+    /*错误写法！不能覆盖重写父类当中final的方法
+    @Override
+    public void method() {
+        System.out.println(&quot;子类覆盖重写父类方法执行&quot;);
+    }*/
+}
+
+public class Student {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student() {
+    }
+}</code></pre><ul>
+<li>对于成员变量来说，如果使用final关键字修饰，那么这个变量也是不可变的<ul>
+<li>成员变量原本具有默认值，所以用了final之后必须手动赋值</li>
+<li>对于final的成员变量，要么直接赋值，要么通过构造方法赋值</li>
+<li>必须保证类中所有重载的构造方法，都最终会对final的成员变量进行赋值</li>
+</ul>
+</li>
+</ul>
+<p>:</p>
+<pre><code>public class Person {
+    private final String name/*=&quot;HAYA&quot;*/;
+
+    public String getName() {
+        return name;
+    }
+
+/*    public void setName(String name) {
+        this.name = name;
+    }*/
+
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public Person() {
+        name = &quot;HAYA&quot;;
+    }
+}</code></pre><h2 id="2-2-权限修饰符"><a href="#2-2-权限修饰符" class="headerlink" title="2.2 权限修饰符"></a>2.2 权限修饰符</h2><pre><code>java中有四种权限修饰符：    public  &gt;  protected  &gt;  (default)  &gt;  private                    
+     同一个类               YES        YES           YES            YES
+     同一个包(子类/非子类)   YES        YES           YES             NO
+     不同包子类             YES        YES            NO             NO
+     不同包非子类           YES         NO            NO             NO</code></pre><h1 id="第三章-内部类"><a href="#第三章-内部类" class="headerlink" title="第三章 内部类"></a>第三章 内部类</h1><ul>
+<li>如同一个事物的内部包含另一个事物，一个类内部包含另一个类。</li>
+</ul>
+<blockquote>
+<p>例如：身体和心脏；汽车和发动机；</p>
+</blockquote>
+<p>分类：</p>
+<ol>
+<li>成员内部类</li>
+<li>局部内部类（包含匿名内部类）</li>
+</ol>
+<p>：</p>
+<blockquote>
+<p>注：内部类可以随意访问外部类；外部类访问内部类，需要内部类对象</p>
+</blockquote>
+<h2 id="3-1-成员内部类"><a href="#3-1-成员内部类" class="headerlink" title="3.1 成员内部类"></a>3.1 成员内部类</h2><p>：</p>
+<pre><code>修饰符 class 类名称{
+       修饰符 class 内部类名称{
+           //...
+       }
+       //...
+   }</code></pre><ul>
+<li>如何使用成员内部类：<ol>
+<li>间接方式：在外部类的<strong>方法</strong>中使用内部类；main只是调用外部类的方法</li>
+<li>直接方式：<strong>外部类名称.内部类名称 对象名 = new 外部类名称（）.new 内部类名称();</strong></li>
+</ol>
+</li>
+</ul>
+<p>:</p>
+<pre><code>public class Demo01InnerClass {
+    public static void main(String[] args) {
+        Body body = new Body();//外部类的对象
+        body.methodBody();//通过外部类的对象，调用外部类的方法，里面间接再使用内部类Heart
+        System.out.println(&quot;==============&quot;);
+        Body.Heart heart = new Body().new Heart();//直接方式调用内部类
+        heart.beat();
+    }
+}
+
+
+
+public class Body {
+
+    public class Heart {//成员内部类
+
+        //内部类的方法
+        public void beat() {
+            System.out.println(&quot;心脏跳动&quot;);
+            System.out.println(&quot;我叫&quot; + name);
+        }
+    }
+
+    //外部类的成员变量
+    private String name;
+
+    //外部类的方法
+    public void methodBody() {
+        System.out.println(&quot;外部类的方法&quot;);
+        Heart heart = new Heart();
+        heart.beat();
+        new Heart().beat();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+}</code></pre><h2 id="3-2-局部内部类"><a href="#3-2-局部内部类" class="headerlink" title="3.2 局部内部类"></a>3.2 局部内部类</h2><p>如果一个类是定义在一个<strong>方法内部</strong>的，那么这就是一个局部内部类，只限当前方法使用</p>
+<pre><code>修饰符 class 外部类名称{
+   修饰符 返回值类型 外部类方法名称（）{
+               class 局部内部类{
+                    /...
+                   }
+               /...
+           }
+       }</code></pre><blockquote>
+<p>定义一个类的时候，权限修饰符的规则：</p>
+<p>外部类：public /(default)</p>
+<p>成员内部类:public protected (default) private</p>
+<p>局部内部类:nothing</p>
+</blockquote>
+<pre><code>public class Outer {
+    public void methodOuter() {
+        class Inner {
+            int num = 10;
+
+            public void methodInner() {
+                System.out.println(num);
+            }
+        }
+        Inner inner = new Inner();
+        inner.methodInner();
+    }
+}
+
+public class DemoMain {
+    public static void main(String[] args) {
+        Outer obj = new Outer();
+        obj.methodOuter();
+    }
+
+}
+
+public class MyOuter {
+        public void methodOuter() {
+            /*final*/
+            int num = 10;//所在方法的局部变量
+    //        num=20;错误写法！
+            class MyInner {
+                public void methodInner() {
+                    System.out.println(num);
+                }
+            }
+        }
+    }</code></pre><blockquote>
+<p>局部内部类如果想要访问所在方法的局部变量，那么这个局部变量必须是【有效final的】。从java8+开始，只要局部变量事实不变，那么final关键字可以省略</p>
+</blockquote>
+<h2 id="3-3-匿名内部类"><a href="#3-3-匿名内部类" class="headerlink" title="3.3 匿名内部类"></a>3.3 匿名内部类</h2><p>如果接口的实现类（或父类的子类），只需要使用唯一的一次，那么这种情况下可以省略掉该类的定义，而改为使用匿名内部类</p>
+<pre><code>接口名称/父类名称 对象名 =new 接口名称（）{
+  //覆盖重写接口中所有抽象方法
+  };</code></pre><ul>
+<li>对格式“new 接口名称（）{…};”进行解析：<ul>
+<li>new代表创建对象的动作</li>
+<li>接口名称就是匿名内部类需要实现的接口名称（要继承的父类）</li>
+<li>{…}才是匿名内部类的内容</li>
+</ul>
+</li>
+</ul>
+<p>：</p>
+<blockquote>
+<p>匿名内部类在创建对象的时候，只能使用唯一一次</p>
+<p>如果希望多次创建对象，而且类的内容一样的话，就必须使用单独定义的类</p>
+</blockquote>
+<p> 概念区分：<strong>匿名对象和匿名内部类</strong></p>
+<p>:</p>
+<pre><code>public interface MyInterface {
+    public abstract void method1();
+
+    public abstract void method2();
+
+    void method();
+}
+
+public class MyInterfaceImpl implements MyInterface {
+    @Override
+    public void method1() {
+
+    }
+
+    @Override
+    public void method2() {
+
+    }
+
+    @Override
+    public void method() {
+        System.out.println(&quot;实现类覆盖重写了方法！&quot;);
+    }
+}
+
+
+public class DemoMain {
+    public static void main(String[] args) {
+        /*MyInterface impl =new MyInterfaceImpl();
+        impl.method();*/
+
+/*
+        MyInterface some=new MyInterface();//错误写法！
+*/
+
+        //使用匿名内部类,而不是匿名对象，对象名称就叫objA
+        MyInterface objA = new MyInterface() {
+            @Override
+            public void method1() {
+                System.out.println(&quot;匿名内部类A实现了1方法&quot;);
+
+            }
+
+            @Override
+            public void method2() {
+                System.out.println(&quot;匿名内部类A实现了2方法&quot;);
+
+            }
+
+            @Override
+            public void method() {
+
+            }
+        };
+        objA.method1();//匿名内部类A实现了1方法
+        objA.method2();//匿名内部类A实现了2方法
+
+
+            //使用了匿名内部类，而且省略了对象名称，也是匿名对象
+            new MyInterface() {
+            @Override
+            public void method1() {
+                System.out.println(&quot;匿名内部类B实现了1方法&quot;);
+
+            }
+
+            @Override
+            public void method2() {
+                System.out.println(&quot;匿名内部类B实现了2方法&quot;);
+
+            }
+
+            @Override
+            public void method() {
+
+            }
+        }.method1();//匿名内部类B实现了1方法
+    }
+}</code></pre><h1 id="第四章-类和接口作为成员变量"><a href="#第四章-类和接口作为成员变量" class="headerlink" title="第四章 类和接口作为成员变量"></a>第四章 类和接口作为成员变量</h1><h2 id="4-1-类作为成员变量类型"><a href="#4-1-类作为成员变量类型" class="headerlink" title="4.1 类作为成员变量类型"></a>4.1 类作为成员变量类型</h2><pre><code>public class DemoMainn {
+    public static void main(String[] args) {
+        Hero hero =new Hero();
+        hero.setName(&quot;HA&quot;);
+        hero.setAge(20);
+
+        Weapon weapon =new Weapon(&quot;DAE&quot;);
+        hero.setWeapon(weapon);
+        hero.attack();//年龄为：20的HA在用DAE攻击敌方
+    }
+}
+
+public class Hero {
+    private String name;
+    private int age;
+    private Weapon weapon;
+
+    public Hero() {
+    }
+
+    public Hero(String name, int age, Weapon weapon) {
+        this.name = name;
+        this.age = age;
+        this.weapon = weapon;
+    }
+    public void attack(){
+        System.out.println(&quot;年龄为&quot;+age+&quot;的&quot;+name+&quot;在用&quot;+weapon.getCode()+&quot;攻击敌方&quot;);
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+}
+
+public class Weapon {
+    private String code;
+
+    public Weapon() {
+    }
+
+    public Weapon(String code) {
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+}</code></pre><h2 id="4-2-接口作为成员变量类型"><a href="#4-2-接口作为成员变量类型" class="headerlink" title="4.2 接口作为成员变量类型"></a>4.2 接口作为成员变量类型</h2><pre><code>public class Hero {
+    private String name;
+    private Skill skill;
+
+    public Hero() {
+    }
+
+    public Hero(String name, Skill skill) {
+        this.name = name;
+        this.skill = skill;
+    }
+
+    public void attack() {
+        System.out.println(&quot;我叫&quot; + name + &quot;,开始释放技能：&quot;);
+        skill.use();//调用接口中的抽象方法
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Skill getSkill() {
+        return skill;
+    }
+
+    public void setSkill(Skill skill) {
+        this.skill = skill;
+    }
+}
+
+public interface Skill {
+    void use();
+}
+
+public class SkillImpl implements Skill {
+    @Override
+    public void use() {
+        System.out.println(&quot;EAF&quot;);
+    }
+}
+
+public class DemoGame {
+    public static void main(String[] args) {
+        Hero hero = new Hero();
+        hero.setName(&quot;SAQ&quot;);
+
+//        hero.setSkill(new SkillImpl());使用单独定义的实现类
+
+
+        /*Skill skill =new Skill() {
+            @Override
+            public void use() {
+                System.out.println(&quot;EAF&quot;);
+            }
+        };
+        hero.setSkill(skill);*/
+
+        hero.setSkill(new Skill() {
+            @Override
+            public void use() {
+                System.out.println(&quot;EQA&quot;);
+            }
+        });
+
+
+        hero.attack();
+    }
+}</code></pre><h2 id="4-3-接口作为方法的参数和返回值"><a href="#4-3-接口作为方法的参数和返回值" class="headerlink" title="4.3 接口作为方法的参数和返回值"></a>4.3 接口作为方法的参数和返回值</h2><p>:</p>
+<pre><code>import java.util.ArrayList;
+import java.util.List;
+
+/*java.util.list正式ArrayLists所实现的接口*/
+public class DemoInterface {
+    public static void main(String[] args) {
+        List&lt;String&gt; list = new ArrayList&lt;&gt;();
+
+        List&lt;String&gt; result = addNames(list);
+        for (int i = 0; i &lt; result.size(); i++) {
+            System.out.println(result.get(i));
+        }
+    }
+
+    public static List&lt;String&gt; addNames(List&lt;String&gt; list) {
+        list.add(&quot;HAHAHA&quot;);
+        list.add(&quot;AWAWAW&quot;);
+        list.add(&quot;EFEFEF&quot;);
+        return list;
+    }
+}</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-02T09:23:44.000Z" itemprop="dateUpdated">2020-03-02 17:23:44</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="蒋明冉">
+            蒋明冉
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&title=《java学习笔记（七）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&title=《java学习笔记（七）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（七）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java学习笔记（十四）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B9%9D%EF%BC%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java学习笔记（九）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>蒋明冉 &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&title=《java学习笔记（七）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&title=《java学习笔记（七）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（七）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

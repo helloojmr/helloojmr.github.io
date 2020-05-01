@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>java学习笔记（十四） | htworld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="java学习笔记（十四）第一章 网络编程入门软件结构 C&#x2F;S结构 ：全称为Client&#x2F;Server结构，是指客户端和服务器结构。 B&#x2F;S结构 ：全称为Browser&#x2F;Server结构，是指浏览器和服务器结构。  网络编程，就是在一定的协议下，实现两台计算机的通信的程序。 网络通信协议java.net包中包含的类和接口，它们提供低层次的通信细节。我们可以直接使用这些类和接口，来专注于网络程序开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（十四）">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/index.html">
+<meta property="og:site_name" content="htworld">
+<meta property="og:description" content="java学习笔记（十四）第一章 网络编程入门软件结构 C&#x2F;S结构 ：全称为Client&#x2F;Server结构，是指客户端和服务器结构。 B&#x2F;S结构 ：全称为Browser&#x2F;Server结构，是指浏览器和服务器结构。  网络编程，就是在一定的协议下，实现两台计算机的通信的程序。 网络通信协议java.net包中包含的类和接口，它们提供低层次的通信细节。我们可以直接使用这些类和接口，来专注于网络程序开发">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-01T02:22:13.819Z">
+<meta property="article:modified_time" content="2020-04-22T00:45:04.000Z">
+<meta property="article:author" content="蒋明冉">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">蒋明冉</h5>
+          <a href="mailto:jiangmingran1@163.com" title="jiangmingran1@163.com" class="mail">jiangmingran1@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java学习笔记（十四）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">java学习笔记（十四）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-01T02:22:13.819Z" itemprop="datePublished" class="page-time">
+  2020-05-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#java学习笔记（十四）"><span class="post-toc-number">1.</span> <span class="post-toc-text">java学习笔记（十四）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-网络编程入门"><span class="post-toc-number"></span> <span class="post-toc-text">第一章 网络编程入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">软件结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络通信协议"><span class="post-toc-number">2.</span> <span class="post-toc-text">网络通信协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-TCP通信程序"><span class="post-toc-number"></span> <span class="post-toc-text">第二章 TCP通信程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Socket类"><span class="post-toc-number">1.</span> <span class="post-toc-text">Socket类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ServerSocket类"><span class="post-toc-number">2.</span> <span class="post-toc-text">ServerSocket类</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件上传"><span class="post-toc-number">3.</span> <span class="post-toc-text">文件上传</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java学习笔记（十四）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">java学习笔记（十四）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-01 10:22:13" datetime="2020-05-01T02:22:13.819Z"  itemprop="datePublished">2020-05-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<h2 id="java学习笔记（十四）"><a href="#java学习笔记（十四）" class="headerlink" title="java学习笔记（十四）"></a>java学习笔记（十四）</h2><h1 id="第一章-网络编程入门"><a href="#第一章-网络编程入门" class="headerlink" title="第一章 网络编程入门"></a>第一章 网络编程入门</h1><h2 id="软件结构"><a href="#软件结构" class="headerlink" title="软件结构"></a>软件结构</h2><ul>
+<li><strong>C/S结构</strong> ：全称为Client/Server结构，是指客户端和服务器结构。</li>
+<li><strong>B/S结构</strong> ：全称为Browser/Server结构，是指浏览器和服务器结构。</li>
+</ul>
+<p><strong>网络编程</strong>，就是在一定的协议下，实现两台计算机的通信的程序。</p>
+<h2 id="网络通信协议"><a href="#网络通信协议" class="headerlink" title="网络通信协议"></a>网络通信协议</h2><p><strong>java.net</strong>包中包含的类和接口，它们提供低层次的通信细节。我们可以直接使用这些类和接口，来专注于网络程序开发，而不用考虑通信的细节。</p>
+<p>java.net包中提供了两种常见的网络协议的支持：</p>
+<ul>
+<li><strong>UDP</strong>：用户数据报协议(User Datagram Protocol)。UDP是无连接通信协议，即在数据传输时，数据的发送端和接收端不建立逻辑连接。简单来说，当一台计算机向另外一台计算机发送数据时，发送端不会确认接收端是否存在，就会发出数据，同样接收端在收到数据时，也不会向发送端反馈是否收到数据。</li>
+</ul>
+<p>由于使用UDP协议消耗资源小，通信效率高，所以通常都会用于音频、视频和普通数据的传输例如视频会议都使用UDP协议，因为这种情况即使偶尔丢失一两个数据包，也不会对接收结果产生太大影响。但由于UDP的面向无连接性，不能保证数据的完整性，在传输重要数据时不建议使用UDP协议。</p>
+<ul>
+<li><p><strong>TCP</strong>：传输控制协议 (Transmission Control Protocol)。TCP协议是<strong>面向连接</strong>的通信协议，即传输数据之前，在发送端和接收端建立逻辑连接，然后再传输数据，它提供了两台计算机之间可靠无差错的数据传输。</p>
+<p>在TCP连接中必须要明确客户端与服务器端，由客户端向服务端发出连接请求，每次连接的创建都需要经过“三次握手”。</p>
+<ul>
+<li>三次握手：TCP协议中，在发送数据的准备阶段，客户端与服务器之间的三次交互，以保证连接的可靠。<ul>
+<li>第一次握手，客户端向服务器端发出连接请求，等待服务器确认。</li>
+<li>第二次握手，服务器端向客户端回送一个响应，通知客户端收到了连接请求。</li>
+<li>第三次握手，客户端再次向服务器端发送确认信息，确认连接。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>完成三次握手，连接建立后，客户端和服务器就可以开始进行数据传输了。由于这种面向连接的特性，TCP协议可以保证传输数据的安全，所以应用十分广泛，例如下载文件、浏览网页等。</p>
+<blockquote>
+<p>常见端口号： 80网络端口 3306MySQL 1521Oracle 8080tomcat</p>
+</blockquote>
+<h1 id="第二章-TCP通信程序"><a href="#第二章-TCP通信程序" class="headerlink" title="第二章 TCP通信程序"></a>第二章 TCP通信程序</h1><p><strong>在Java中，提供了两个类用于实现TCP通信程序：</strong></p>
+<ol>
+<li>客户端：<strong>java.net.Socket</strong>类表示。创建<strong>Socket</strong>对象，向服务端发出连接请求，服务端响应请求，两者建立连接开始通信。</li>
+<li>服务端：<strong>java.net.ServerSocket</strong>类表示。创建<strong>ServerSocket</strong>对象，相当于开启一个服务，并等待客户端的连接。</li>
+</ol>
+<blockquote>
+<p>服务器使用客户端的流和客户端交互</p>
+</blockquote>
+<h2 id="Socket类"><a href="#Socket类" class="headerlink" title="Socket类"></a>Socket类</h2><p>该类实现客户端套接字，套接字指的是两台设备之间通讯的端点。</p>
+<blockquote>
+<p>套接字：包含了IP地址和端口号的网络单位</p>
+</blockquote>
+<ul>
+<li><strong>public Socket(String host, int port)</strong>:创建套接字对象并将其连接到指定主机上的指定端口号。如果指定的host是null ，则相当于指定地址为回送地址。  </li>
+</ul>
+<blockquote>
+<p>回送地址(127.x.x.x) 是本机回送地址（Loopback Address），主要用于网络软件测试以及本地机进程间通信，无论什么程序，一旦使用回送地址发送数据，立即返回，不进行任何网络传输。</p>
+</blockquote>
+<ul>
+<li><strong>public InputStream getInputStream()</strong>： 返回此套接字的输入流。<ul>
+<li>如果此Scoket具有相关联的通道，则生成的InputStream 的所有操作也关联该通道。</li>
+<li>关闭生成的InputStream也将关闭相关的Socket。</li>
+</ul>
+</li>
+<li><strong>public OutputStream getOutputStream()</strong>： 返回此套接字的输出流。<ul>
+<li>如果此Scoket具有相关联的通道，则生成的OutputStream 的所有操作也关联该通道。</li>
+<li>关闭生成的OutputStream也将关闭相关的Socket。</li>
+</ul>
+</li>
+<li><strong>public void close()</strong>：关闭此套接字。<ul>
+<li>一旦一个socket被关闭，它不可再使用。</li>
+<li>关闭此socket也将关闭相关的InputStream和OutputStream 。 </li>
+</ul>
+</li>
+<li><strong>public void shutdownOutput()</strong>： 禁用此套接字的输出流。   <ul>
+<li>任何先前写出的数据将被发送，随后终止输出流。 </li>
+</ul>
+</li>
+</ul>
+<p>：</p>
+<ul>
+<li>客户端的实现步骤:<ol>
+<li>创建一个客户端对象Socket,构造方法绑定服务器的IP地址和端口号</li>
+<li>使用Socket对象中的方法getOutputStream()获取网络字节输出流OutputStream对象</li>
+<li>使用网络字节输出流OutputStream对象中的方法write,给服务器发送数据</li>
+<li>使用Socket对象中的方法getInputStream()获取网络字节输入流InputStream对象</li>
+<li>使用网络字节输入流InputStream对象中的方法read,读取服务器回写的数据</li>
+<li>释放资源(Socket)</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>客户端和服务器端进行交互,必须使用Socket中提供的网络流,不能使用自己创建的流对象;</p>
+<p>当我们创建客户端对象Socket的时候,就会去请求服务器和服务器经过3次握手建立连接通路;如果服务器未启动,则抛出异常ConnectException: Connection refused: connect</p>
+</blockquote>
+<h2 id="ServerSocket类"><a href="#ServerSocket类" class="headerlink" title="ServerSocket类"></a>ServerSocket类</h2><p>这个类实现了服务器套接字，该对象等待通过网络的请求。</p>
+<ul>
+<li><strong>public ServerSocket(int port)</strong>：使用该构造方法在创建ServerSocket对象时，就可以将其绑定到一个指定的端口号上。</li>
+<li><strong>public Socket accept()</strong>：侦听并接受连接，返回一个新的Socket对象，用于和客户端实现通信。该方法会一直阻塞直到建立连接。</li>
+</ul>
+<p>：</p>
+<ul>
+<li>服务器的实现步骤:<ol>
+<li>创建服务器ServerSocket对象绑定指定的端口号</li>
+<li>使用ServerSocket对象中的方法accept,获取到请求的客户端对象Socket</li>
+<li>使用Socket对象中的方法getInputStream()获取网络字节输入流InputStream对象</li>
+<li>使用网络字节输入流InputStream对象中的方法read,读取客户端发送的数据</li>
+<li>使用Socket对象中的方法getOutputStream()获取网络字节输出流OutputStream对象</li>
+<li>使用网络字节输出流OutputStream对象中的方法write,给客户端回写数据</li>
+<li>释放资源(Socket,ServerSocket)</li>
+</ol>
+</li>
+</ul>
+<p>：</p>
+<pre><code>public class TCPClient {
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket(&quot;127.0.0.1&quot;, 8888);
+        OutputStream os = socket.getOutputStream();
+        os.write(&quot;hello,server!&quot;.getBytes());
+        InputStream is = socket.getInputStream();
+        byte[] bytes = new byte[1024];
+        int len = is.read(bytes);
+        System.out.println(new String(bytes, 0, len));
+        socket.close();
+
+    }
+}
+
+public class TCPServer {
+    public static void main(String[] args) throws IOException {
+        ServerSocket server = new ServerSocket(8888);
+        Socket socket = server.accept();
+        InputStream is = socket.getInputStream();
+        byte[] bytes = new byte[1024];
+        int len = is.read(bytes);
+        System.out.println(new String(bytes, 0, len));
+        OutputStream os = socket.getOutputStream();
+        os.write(&quot;got it&quot;.getBytes());
+        socket.close();
+        server.close();
+    }
+}</code></pre><h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><p>客户端:读取本地文件,上传到服务器,读取服务器回写的数据</p>
+<ol>
+<li>创建一个本地字节输入流FileInputStream对象,构造方法中绑定要读取的数据源</li>
+<li>创建一个客户端Socket对象,构造方法中绑定服务器的IP地址和端口号</li>
+<li>使用Socket中的方法getOutputStream,获取网络字节输出流OutputStream对象</li>
+<li>使用本地字节输入流FileInputStream对象中的方法read,读取本地文件</li>
+<li>使用网络字节输出流OutputStream对象中的方法write,把读取到的文件上传到服务器</li>
+<li>使用Socket中的方法getInputStream,获取网络字节输入流InputStream对象</li>
+<li>使用网络字节输入流InputStream对象中的方法read读取服务回写的数据</li>
+<li>释放资源(FileInputStream,Socket)</li>
+</ol>
+<p>：</p>
+<pre><code>public class TCPClient {
+    public static void main(String[] args) throws IOException {
+        FileInputStream fis = new FileInputStream(&quot;list.txt&quot;);
+        Socket socket = new Socket(&quot;127.0.0.1&quot;, 8888);
+        OutputStream os = socket.getOutputStream();
+        int len = 0;
+        byte[] bytes = new byte[1024];
+        while ((len = fis.read(bytes)) != -1) {
+            os.write(bytes, 0, len);
+        }
+        InputStream is = socket.getInputStream();
+        while ((len = is.read(bytes)) != -1) {
+            System.out.println(new String(bytes, 0, len));
+        }
+
+        fis.close();
+        socket.close();
+    }
+}</code></pre><p>服务器端:读取客户端上传的文件,保存到服务器的硬盘,给客户端回写”上传成功”</p>
+<ol>
+<li>创建一个服务器ServerSocket对象,和系统要指定的端口号</li>
+<li>使用ServerSocket对象中的方法accept,获取到请求的客户端Socket对象</li>
+<li>使用Socket对象中的方法getInputStream,获取到网络字节输入流InputStream对象</li>
+<li>判断d:\upload文件夹是否存在,不存在则创建</li>
+<li>创建一个本地字节输出流FileOutputStream对象,构造方法中绑定要输出的目的地</li>
+<li>使用网络字节输入流InputStream对象中的方法read,读取客户端上传的文件</li>
+<li>使用本地字节输出流FileOutputStream对象中的方法write,把读取到的文件保存到服务器的硬盘上</li>
+<li>使用Socket对象中的方法getOutputStream,获取到网络字节输出流OutputStream对象</li>
+<li>使用网络字节输出流OutputStream对象中的方法write,给客户端回写”上传成功”</li>
+<li>释放资源(FileOutputStream,Socket,ServerSocket)</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-04-22T00:45:04.000Z" itemprop="dateUpdated">2020-04-22 08:45:04</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="蒋明冉">
+            蒋明冉
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&title=《java学习笔记（十四）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&title=《java学习笔记（十四）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（十四）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java学习笔记（十二）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java学习笔记（七）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>蒋明冉 &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&title=《java学习笔记（十四）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&title=《java学习笔记（十四）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（十四）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>java学习笔记（一） | htworld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="java学习笔记（一） 第一章 Java1.1  java语言概述sun（stanford University Network)公司1995年推出。 版本  1995年1.0   1997年1.1   2002年1.4   2004年java 5   2009 Oracle收购sun公司，并于2011发布java 7   2014年java 8(占据3&#x2F;4市场)   2018年java 10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java学习笔记（一）">
+<meta property="og:url" content="http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
+<meta property="og:site_name" content="htworld">
+<meta property="og:description" content="java学习笔记（一） 第一章 Java1.1  java语言概述sun（stanford University Network)公司1995年推出。 版本  1995年1.0   1997年1.1   2002年1.4   2004年java 5   2009 Oracle收购sun公司，并于2011发布java 7   2014年java 8(占据3&#x2F;4市场)   2018年java 10">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-01T02:22:13.850Z">
+<meta property="article:modified_time" content="2020-03-03T03:30:54.000Z">
+<meta property="article:author" content="蒋明冉">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">蒋明冉</h5>
+          <a href="mailto:jiangmingran1@163.com" title="jiangmingran1@163.com" class="mail">jiangmingran1@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">java学习笔记（一）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">java学习笔记（一）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-01T02:22:13.850Z" itemprop="datePublished" class="page-time">
+  2020-05-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章-Java"><span class="post-toc-number">1.</span> <span class="post-toc-text">第一章 Java</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-java语言概述"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.1  java语言概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2计算机基础知识"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">1.2计算机基础知识</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-3-java虚拟机——JVM-Java-Virtual-Machine"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">1.3 java虚拟机——JVM(Java Virtual Machine)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章-HelloWorld入门程序"><span class="post-toc-number">2.</span> <span class="post-toc-text">第二章 HelloWorld入门程序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-编写HelloWorld"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 编写HelloWorld</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2关键字和标识符"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2关键字和标识符</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章-常量和变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">第三章 常量和变量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1常量"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">3.1常量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2数据类型"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">3.2数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-1基本数据类型"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">3.2.1基本数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-2引用数据类型"><span class="post-toc-number">3.2.2.</span> <span class="post-toc-text">3.2.2引用数据类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3变量"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.3变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章-数据类型转换"><span class="post-toc-number">4.</span> <span class="post-toc-text">第四章 数据类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1自动类型转换（隐式）"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">4.1自动类型转换（隐式）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2强制类型转换（显式）"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">4.2强制类型转换（显式）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章-ASCII码"><span class="post-toc-number">5.</span> <span class="post-toc-text">第五章 ASCII码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章-运算符和表达式"><span class="post-toc-number">6.</span> <span class="post-toc-text">第六章 运算符和表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-1算数运算符"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">6.1算数运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-2-赋值运算符"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">6.2  赋值运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-3-比较运算符"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">6.3 比较运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-4-逻辑运算符"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">6.4 逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-5-三元运算符"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">6.5 三元运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章-方法入门"><span class="post-toc-number">7.</span> <span class="post-toc-text">第七章 方法入门</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-1-概述"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">7.1 概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-2-方法的定义"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">7.2 方法的定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-3-方法的调用"><span class="post-toc-number">7.3.</span> <span class="post-toc-text">7.3 方法的调用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#jshell"><span class="post-toc-number">7.3.1.</span> <span class="post-toc-text">jshell</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-4-编译器的两点优化"><span class="post-toc-number">7.4.</span> <span class="post-toc-text">7.4 编译器的两点优化</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第八章-流程控制"><span class="post-toc-number">8.</span> <span class="post-toc-text">第八章 流程控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-1-顺序结构"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">8.1 顺序结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-2-判断语句"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">8.2 判断语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-3-循环语句"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">8.3 循环语句</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-4-三种循环的区别"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">8.4 三种循环的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-5-条件控制语句-break和continue"><span class="post-toc-number">8.5.</span> <span class="post-toc-text">8.5 条件控制语句 break和continue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-6-死循环和嵌套循环"><span class="post-toc-number">8.6.</span> <span class="post-toc-text">8.6 死循环和嵌套循环</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-java学习笔记（一）"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">java学习笔记（一）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-05-01 10:22:13" datetime="2020-05-01T02:22:13.850Z"  itemprop="datePublished">2020-05-01</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <hr>
+<pre><code>java学习笔记（一）</code></pre><hr>
+<h1 id="第一章-Java"><a href="#第一章-Java" class="headerlink" title="第一章 Java"></a>第一章 Java</h1><h2 id="1-1-java语言概述"><a href="#1-1-java语言概述" class="headerlink" title="1.1  java语言概述"></a>1.1  java语言概述</h2><p>sun（stanford University Network)公司1995年推出。</p>
+<p>版本</p>
+<ul>
+<li>1995年1.0</li>
+</ul>
+<ul>
+<li>1997年1.1</li>
+</ul>
+<ul>
+<li>2002年1.4</li>
+</ul>
+<ul>
+<li>2004年java 5</li>
+</ul>
+<ul>
+<li>2009 Oracle收购sun公司，并于2011发布java 7</li>
+</ul>
+<ul>
+<li>2014年java 8(占据3/4市场)</li>
+</ul>
+<ul>
+<li>2018年java 10</li>
+</ul>
+<h2 id="1-2计算机基础知识"><a href="#1-2计算机基础知识" class="headerlink" title="1.2计算机基础知识"></a>1.2计算机基础知识</h2><p>二进制</p>
+<pre><code>莱布尼茨发明</code></pre><p>字节</p>
+<pre><code>字节是最小存储单位。</code></pre><ul>
+<li>8bit(位)=1Byte</li>
+<li>1024Byte=1KB</li>
+<li>1024KB=1MB</li>
+<li>1024MB=1GB</li>
+<li>1024GB=1TB</li>
+<li>1024TB=1PB</li>
+<li>1024PB=1EB</li>
+<li>1024EB=1ZB</li>
+</ul>
+<blockquote>
+<p>100000,0000,0000一个逗号为万，两个逗号为亿</p>
+</blockquote>
+<ul>
+<li>命令提示符<ul>
+<li>MS-DOS(Microsoft Disk Operating System)</li>
+<li>cmd(command)</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>d:(根目录）</td>
+<td align="center">切换盘符</td>
+</tr>
+<tr>
+<td>cd xxx\xxx\（Tab键自动补全/切换</td>
+<td align="center">进入路径</td>
+</tr>
+<tr>
+<td>cd ..</td>
+<td align="center">返回上级</td>
+</tr>
+<tr>
+<td>cd \</td>
+<td align="center">返回根路径</td>
+</tr>
+<tr>
+<td>dir(direcory)</td>
+<td align="center">显示当前目录文件列表</td>
+</tr>
+<tr>
+<td>cls(clear screen)</td>
+<td align="center">清屏</td>
+</tr>
+<tr>
+<td>exit</td>
+<td align="center">关闭cmd</td>
+</tr>
+<tr>
+<td>xxx\xxx\xxx\xx</td>
+<td align="center">直接运行xx.exe</td>
+</tr>
+<tr>
+<td>path</td>
+<td align="center">命令执行路径</td>
+</tr>
+</tbody></table>
+<h2 id="1-3-java虚拟机——JVM-Java-Virtual-Machine"><a href="#1-3-java虚拟机——JVM-Java-Virtual-Machine" class="headerlink" title="1.3 java虚拟机——JVM(Java Virtual Machine)"></a>1.3 java虚拟机——JVM(Java Virtual Machine)</h2><blockquote>
+<p>各平台的翻译  Win版JVM  Linux版JVM  Mac版JVM</p>
+</blockquote>
+<ul>
+<li>JRE(java runtime enviranment):运行环境，包含JVM和运行时所必需的核心类库。</li>
+<li>JDK(Java development kit):java程序开发包，包含JRE和开发人员使用的工具。</li>
+<li>如果想要运行一个已有的Java程序，那么只需安装JRE。</li>
+<li>如果想要开发一个 全新的Java程序，那么必须安装JDK。</li>
+</ul>
+<blockquote>
+<p>JDK&gt;&gt;JRE&gt;&gt;JVM</p>
+</blockquote>
+<h1 id="第二章-HelloWorld入门程序"><a href="#第二章-HelloWorld入门程序" class="headerlink" title="第二章 HelloWorld入门程序"></a>第二章 HelloWorld入门程序</h1><h2 id="2-1-编写HelloWorld"><a href="#2-1-编写HelloWorld" class="headerlink" title="2.1 编写HelloWorld"></a>2.1 编写HelloWorld</h2><p>编写java源程序–&gt;编译器编译(java字节码文件.class)–&gt;JVM运行；</p>
+<pre><code>public class HelloWorld（和所在的文件名称完全一样）{    
+    public static void main(String[] args){    
+    System.out.println(&quot;Hello,World!&quot;);
+        }
+}
+
+javac HelloWorld.java
+java HelloWorld</code></pre><h2 id="2-2关键字和标识符"><a href="#2-2关键字和标识符" class="headerlink" title="2.2关键字和标识符"></a>2.2关键字和标识符</h2><ul>
+<li>关键字：有特殊含义的，被保留的，不允许随意使用的字符</li>
+<li>标识符：自定义的名称<ul>
+<li>字母 数字 $ _ ;不能以数字开头;不能使用关键字</li>
+</ul>
+</li>
+<li>类名规范：首字母大写，后面每个单词的首字母大写（大驼峰式）</li>
+<li>方法名/变量名规范：首字母小写，后面每个单词的首字母大写（小驼峰式）</li>
+</ul>
+<h1 id="第三章-常量和变量"><a href="#第三章-常量和变量" class="headerlink" title="第三章 常量和变量"></a>第三章 常量和变量</h1><h2 id="3-1常量"><a href="#3-1常量" class="headerlink" title="3.1常量"></a>3.1常量</h2><ul>
+<li>整型常量</li>
+<li>浮点数常量</li>
+<li>字符串常量：”123”、””</li>
+<li>字符常量:有且只有一个字符。’1’、’a’、’中’</li>
+<li>布尔常量:true、false</li>
+<li>空常量:null（不可直接用于打印输出）</li>
+</ul>
+<h2 id="3-2数据类型"><a href="#3-2数据类型" class="headerlink" title="3.2数据类型"></a>3.2数据类型</h2><h3 id="3-2-1基本数据类型"><a href="#3-2-1基本数据类型" class="headerlink" title="3.2.1基本数据类型"></a>3.2.1基本数据类型</h3><ul>
+<li>整数型：byte(1字节) short(2字节) int(4字节) long(8字节)</li>
+<li>浮点型：float(4字节)double(8字节)</li>
+<li>字符型：char(2个字节)</li>
+<li>布尔型：boolean(一个字节)</li>
+</ul>
+<blockquote>
+<p>java中的默认类型：int double;使用long加后缀L;使用float加后缀F</p>
+<p>数据范围与字节数不一定相关，float四字节，long八字节，但float范围更广</p>
+</blockquote>
+<h3 id="3-2-2引用数据类型"><a href="#3-2-2引用数据类型" class="headerlink" title="3.2.2引用数据类型"></a>3.2.2引用数据类型</h3><blockquote>
+<p>引用即指针</p>
+</blockquote>
+<p> 字符串 数组 类 接口 lanbda</p>
+<h2 id="3-3变量"><a href="#3-3变量" class="headerlink" title="3.3变量"></a>3.3变量</h2><p><strong>数据类型 变量名称;</strong></p>
+<p><strong>变量名称=数据值;//赋值</strong></p>
+<pre><code>int num1;
+num1=10;</code></pre><p><strong>数据类型 变量名称=数据值;</strong></p>
+<pre><code>int a,b,c;
+a=10;b=20;c=30;
+int x=100,y=200,z=300;
+int num2=20;
+byte num3=30;
+  //byte num4=10000;
+long num5=3000000000L;
+float num6=2.5F;
+double num7=2.5;
+char zifu1=&apos;中&apos;;
+boolean var1=true;
+boolean var2=var1;</code></pre><blockquote>
+<p>变量必须先赋值再使用</p>
+<p>变量的使用不能超出作用域的范围</p>
+</blockquote>
+<h1 id="第四章-数据类型转换"><a href="#第四章-数据类型转换" class="headerlink" title="第四章 数据类型转换"></a>第四章 数据类型转换</h1><h2 id="4-1自动类型转换（隐式）"><a href="#4-1自动类型转换（隐式）" class="headerlink" title="4.1自动类型转换（隐式）"></a>4.1自动类型转换（隐式）</h2><p>数据范围从小到大</p>
+<pre><code>long num1=100;
+double num2=2.5f;
+float num3=30L;</code></pre><h2 id="4-2强制类型转换（显式）"><a href="#4-2强制类型转换（显式）" class="headerlink" title="4.2强制类型转换（显式）"></a>4.2强制类型转换（显式）</h2><p>范围小的类型 范围小的变量名=（范围小的类型） 原本范围大的数据;</p>
+<pre><code>int num1 =(int)100L;</code></pre><blockquote>
+<p>强制类型转化，可能发生数据溢出或精度损失。</p>
+</blockquote>
+<pre><code>int num1=(int)6000000000L;
+System.out.println(num1)//1705032704
+
+int num2=(int)3.5
+System.out.println(num2)//3</code></pre><blockquote>
+<p>short/byte/char可以数学运算，例如”+”;运算时都会被提升为int类型</p>
+</blockquote>
+<pre><code>char zifu1=&apos;A&apos;;
+system.out.println(zifu1+1);
+
+byte num1=30;
+byte num2=40;
+//byte result1=num1+num2;报错
+int result1=num1+num2;
+
+short num3=50;
+short result2=(short)(num1+num3);</code></pre><blockquote>
+<p>boolean类型不能进行数据类型转换</p>
+</blockquote>
+<h1 id="第五章-ASCII码"><a href="#第五章-ASCII码" class="headerlink" title="第五章 ASCII码"></a>第五章 ASCII码</h1><p><strong>数字和字符的对照关系表(编码表)</strong></p>
+<ul>
+<li>ASCII码表(American Standard Code for Information Interchange)美国信息交换标准代码</li>
+<li>Unicode码表(万国码)0-127和ASCII一样，128开始包含更多字符。</li>
+</ul>
+<blockquote>
+<p>48 ‘0’   65 ‘A’   97 ‘a’<br>    char zifu1=’A’;<br>    System.out.println(zifi1+0);//65</p>
+</blockquote>
+<pre><code>char zifu2=&apos;a&apos;;
+int num=zifu2;
+System.out.println(num);//97
+
+char zifu3=&apos;中&apos;
+System.out.println(zifu3+0);//20013</code></pre><h1 id="第六章-运算符和表达式"><a href="#第六章-运算符和表达式" class="headerlink" title="第六章 运算符和表达式"></a>第六章 运算符和表达式</h1><h2 id="6-1算数运算符"><a href="#6-1算数运算符" class="headerlink" title="6.1算数运算符"></a>6.1算数运算符</h2><ul>
+<li>|  + - * / % ++   — —</li>
+</ul>
+<p>++num:先加再用</p>
+<pre><code>int num=1;
+System.out.println(++num);//2
+System.out.println(num);//2</code></pre><p>num++:先用再加</p>
+<pre><code>int num2=1;
+System.out.println(num++);//1
+System.out.println(num);//2</code></pre><p>只有变量可以使用++ –<br>30++ 错误！</p>
+<pre><code>int x=10,y=20;
+result=++x+y--;
+System.out.println(result);//31</code></pre><blockquote>
+<p>运算中如果有不同类型的数据，结果是数据范围大的类型。</p>
+</blockquote>
+<blockquote>
+<p>对于字符产String，加号代表字符串的连接,任何数据类型和字符串连接时，结果都是字符串。</p>
+</blockquote>
+<pre><code>String str1=&quot;abc&quot;;
+System.out.println(str1);//abc
+System.out.println(&quot;abc&quot;+&quot;def&quot;);//abcdef
+System.out.println(str1+&quot;def&quot;);//abcdef
+System.out.println(str1+20);//abc20
+System.out.println(str1+20+30);//abc2030
+System.out.println(str1+(20+30));//abc50</code></pre><h2 id="6-2-赋值运算符"><a href="#6-2-赋值运算符" class="headerlink" title="6.2  赋值运算符"></a>6.2  赋值运算符</h2><p>基本赋值运算符  =</p>
+<p>复合赋值运算符  += -= *= /= %=</p>
+<pre><code>a+=1;a=a+1;
+b-=2;b=b-2;
+c*=3;c=c*3;
+d/=4;d=d/4;
+e%=5;e=e%5;</code></pre><blockquote>
+<p>复合赋值运算符中隐含了一个强制类型转换</p>
+</blockquote>
+<pre><code>byte num=30;
+num+=5;
+//num=byte+5;
+//num=int+int
+//num=int
+//num=(byte)int</code></pre><h2 id="6-3-比较运算符"><a href="#6-3-比较运算符" class="headerlink" title="6.3 比较运算符"></a>6.3 比较运算符</h2><ul>
+<li>== &gt; &lt; &gt;= &lt;= !=</li>
+<li>结果为Boolean值  true false</li>
+</ul>
+<blockquote>
+<p>多次判断不能连写， 1&lt;X&lt;3报错</p>
+</blockquote>
+<h2 id="6-4-逻辑运算符"><a href="#6-4-逻辑运算符" class="headerlink" title="6.4 逻辑运算符"></a>6.4 逻辑运算符</h2><ul>
+<li>连接两个Boolean值<ul>
+<li>与&amp;&amp; 两个true为true,否则就是false</li>
+<li>或|| 至少一个true为true</li>
+<li>非！ </li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>&amp;&amp; || 具有短路效果：如果左边已经可以判断最终结果，那么右边的代码将不再执行，从而节省一定的性能</p>
+</blockquote>
+<blockquote>
+<p>xx||xx||xx||xx||xx</p>
+</blockquote>
+<h2 id="6-5-三元运算符"><a href="#6-5-三元运算符" class="headerlink" title="6.5 三元运算符"></a>6.5 三元运算符</h2><p><strong>数据类型 变量名 =条件判断？表达式A:表达式B</strong></p>
+<p>流程：</p>
+<ol>
+<li><p>判断条件是否成立</p>
+</li>
+<li><p>如果成立为true，那么将表达式A的值赋给左侧的变量;如果不成立为false，那么将表达式B的值赋给左边的变量</p>
+<p> int a=10;<br> int b=20;<br>  int max=a&gt;b?a:b;</p>
+</li>
+</ol>
+<blockquote>
+<p>必须同时保证表达式A和表达式B都符合左侧数据类型的要求</p>
+</blockquote>
+<pre><code>int result =3&gt;4?2.5:10;//报错</code></pre><blockquote>
+<p>三元运算符的结果必须被使用</p>
+</blockquote>
+<pre><code>System.out.println(a&gt;b?a:b);
+a&gt;b?a:b;//报错</code></pre><h1 id="第七章-方法入门"><a href="#第七章-方法入门" class="headerlink" title="第七章 方法入门"></a>第七章 方法入门</h1><h2 id="7-1-概述"><a href="#7-1-概述" class="headerlink" title="7.1 概述"></a>7.1 概述</h2><p>方法就是将一个功能抽取出来，把代码单独定义在一个大括号内，形成一个单独的功能。</p>
+<p>当们需要使用这个功能时，就可以去调用，这样即实现了代码的复用性，也解决了代码冗余的现象。</p>
+<h2 id="7-2-方法的定义"><a href="#7-2-方法的定义" class="headerlink" title="7.2 方法的定义"></a>7.2 方法的定义</h2><pre><code>修饰符 返回值类型 方法名（）{
+    方法体
+}</code></pre><blockquote>
+<p>方法的定义不能产生嵌套包含关系</p>
+</blockquote>
+<h2 id="7-3-方法的调用"><a href="#7-3-方法的调用" class="headerlink" title="7.3 方法的调用"></a>7.3 方法的调用</h2><pre><code>对象名.方法名();</code></pre><h3 id="jshell"><a href="#jshell" class="headerlink" title="jshell"></a>jshell</h3><p>脚本–&gt;轻量化–&gt;cmd-&gt;jshell–&gt;/exit 退出</p>
+<h2 id="7-4-编译器的两点优化"><a href="#7-4-编译器的两点优化" class="headerlink" title="7.4 编译器的两点优化"></a>7.4 编译器的两点优化</h2><p>对于byte、short、char 如果右边赋值的数值没有超过范围，那么编译器会自动隐含补上（byte）（short）（char）</p>
+<pre><code>byte num=/*（byte）*/30;
+byte num=128;//报错
+
+char zifu=/*（char）*/65;
+System.out.println(zifu)//A</code></pre><p>“编译器的常量优化”——在给变量赋值时，如果右边的表达式中全是常量，没有任何变量，那么编译器javac会直接将若干个常量表达式计算得出结果。</p>
+<pre><code>short result=5+8;
+
+等号右边全是常量，没有任何变量参与运算，编译之后，得到的.class字节码文件中就是
+
+short result=13;
+
+short num1=10;//正确写法
+
+short a=5,b=8;
+short c=a+b//错误写法！左侧需要是int类型
+
+short result=5+8;
+System.out.println(zifu)//13
+
+short result2=5+a+8;//错误写法！右边有变量</code></pre><h1 id="第八章-流程控制"><a href="#第八章-流程控制" class="headerlink" title="第八章 流程控制"></a>第八章 流程控制</h1><h2 id="8-1-顺序结构"><a href="#8-1-顺序结构" class="headerlink" title="8.1 顺序结构"></a>8.1 顺序结构</h2><h2 id="8-2-判断语句"><a href="#8-2-判断语句" class="headerlink" title="8.2 判断语句"></a>8.2 判断语句</h2><blockquote>
+<p>关系表达式——&gt;true/false</p>
+</blockquote>
+<p><strong>if</strong></p>
+<pre><code>if(关系表达式){
+语句体
+}</code></pre><p><strong>if—else</strong></p>
+<pre><code>if(关系表达式){
+    语句体
+}else{
+    语句体2}</code></pre><p><strong>if—else if…else</strong></p>
+<pre><code>if(判断条件1){
+    语句体1
+}else if(判断条件2){
+    语句体2
+}
+...
+}else if(判断条件n){
+    语句体n
+}else{
+    语句体n+1
+}</code></pre><p><strong>标准的switch-case</strong></p>
+<pre><code>switch(表达式){
+    case 常量值1：
+        语句体1;
+        break;
+    case 常量值2：
+        语句体2;
+        break;
+    case 常量值3：
+        语句体3;
+        break;
+    default:
+        语句体n+1;
+        break;
+}</code></pre><blockquote>
+<p>匹配到哪一个case就从哪一个位置向下执行，直到遇到了break或者整体结束为主</p>
+</blockquote>
+<p><strong>穿透的siwtch-case</strong></p>
+<p>多个case后面的数值不可以重复</p>
+<p>switch后的小括号只能是byte、short、int、char;String、enum</p>
+<p>siwtch语句前后顺序可以颠倒，而且break语句可以省略</p>
+<h2 id="8-3-循环语句"><a href="#8-3-循环语句" class="headerlink" title="8.3 循环语句"></a>8.3 循环语句</h2><p><strong>for</strong></p>
+<pre><code>for(初始化语句;条件判断/布尔表达式;步进语句)
+{    
+    循环体;
+}</code></pre><p><strong>标准的while</strong></p>
+<pre><code>while(条件判断)
+{
+    循环体;
+}</code></pre><p><strong>扩展的while</strong></p>
+<pre><code>初始化语句;
+while(条件判断）
+{
+    循环体;
+    步进语句;
+}</code></pre><p><strong>标准的do-while</strong></p>
+<pre><code>do{
+    循环体;
+}while(条件判断);</code></pre><p><strong>扩展的do-while</strong></p>
+<pre><code>初始化语句;
+do{
+    循环体;
+    步进语句;
+}while(条件判断);</code></pre><blockquote>
+<p>步进语句：循环结束执行</p>
+</blockquote>
+<h2 id="8-4-三种循环的区别"><a href="#8-4-三种循环的区别" class="headerlink" title="8.4 三种循环的区别"></a>8.4 三种循环的区别</h2><ul>
+<li>如果条件判断从没满足过，那么for和while执行0次，do-while执行一次</li>
+<li>for循环的变量在小括号中定义，只有for循环内部可以使用;</li>
+<li>while和do-while初始化语句定义在外部，可以继续使用</li>
+</ul>
+<h2 id="8-5-条件控制语句-break和continue"><a href="#8-5-条件控制语句-break和continue" class="headerlink" title="8.5 条件控制语句 break和continue"></a>8.5 条件控制语句 break和continue</h2><p><strong>break</strong></p>
+<p>switch中直接跳出</p>
+<p>循环语句中直接跳出</p>
+<p><strong>continue</strong></p>
+<p>立刻跳过当前次循环剩余内容，开始下一次循环</p>
+<h2 id="8-6-死循环和嵌套循环"><a href="#8-6-死循环和嵌套循环" class="headerlink" title="8.6 死循环和嵌套循环"></a>8.6 死循环和嵌套循环</h2><p><strong>死循环</strong></p>
+<pre><code> while(true){
+    循环体;
+}</code></pre><blockquote>
+<p>死循环后写执行语句会报错</p>
+</blockquote>
+<p><strong>嵌套循环</strong></p>
+<pre><code>外层控制...内层控制...</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-03-03T03:30:54.000Z" itemprop="dateUpdated">2020-03-03 11:30:54</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="蒋明冉">
+            蒋明冉
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&title=《java学习笔记（一）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&title=《java学习笔记（一）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（一）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">java学习笔记（五）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">java学习笔记（四）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>蒋明冉 &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&title=《java学习笔记（一）》 — htworld&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&title=《java学习笔记（一）》 — htworld&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《java学习笔记（一）》 — htworld&url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2020/05/01/java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
